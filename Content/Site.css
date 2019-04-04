@@ -1,0 +1,83 @@
+﻿
+h2 {
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: darkgray;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(footballbg3.jpg);
+}
+
+.heading {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    font: bold;
+    text-shadow: 4px 2px 2px #b40000;
+}
+
+.searchtext {
+    color: rgb(255, 255, 255);
+    font: bold;
+}
+
+.searchBox{
+    color: black;
+}
+
+#name {
+    color: darkred;
+    font: bold;
+}
+
+#tablehead {
+    font-size: 16px;
+    font: bold;
+    color: red;
+    text-shadow: 2px 1px 1px black;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.name {
+    text-align: center;
+    font-size: 18px;
+}
+
+.headingfour {
+    font-size: 26px;
+    font: bold;
+    text-shadow: 2px 1px 1px black;
+}
+
+.profile {
+    padding: 20px;
+    background-color: ThreeDDarkShadow;
+   
+    box-shadow: 10px 10px 5px grey;
+}
+
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
