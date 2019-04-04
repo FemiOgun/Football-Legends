@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FootballLegendsDBModelStoreContainer" CdmEntityContainer="FootballLegendsDBEntities">
+    <EntitySetMapping Name="Legends">
+      <EntityTypeMapping TypeName="FootballLegendsDBModel.Legend">
+        <MappingFragment StoreEntitySet="Legend">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="CareerStartYear" ColumnName="CareerStartYear" />
+          <ScalarProperty Name="CareerEndYear" ColumnName="CareerEndYear" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Clubs" ColumnName="Clubs" />
+          <ScalarProperty Name="Appearances" ColumnName="Appearances" />
+          <ScalarProperty Name="Goals" ColumnName="Goals" />
+          <ScalarProperty Name="ClubHonors" ColumnName="ClubHonors" />
+          <ScalarProperty Name="InternationalHonors" ColumnName="InternationalHonors" />
+          <ScalarProperty Name="BallondOrs" ColumnName="BallondOrs" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

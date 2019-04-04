@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FootballLegendsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Legend">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CareerStartYear" Type="Int32" />
+    <Property Name="CareerEndYear" Type="Int32" />
+    <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Clubs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Appearances" Type="Int32" />
+    <Property Name="Goals" Type="Int32" />
+    <Property Name="ClubHonors" Type="Int16" />
+    <Property Name="InternationalHonors" Type="Int16" />
+    <Property Name="BallondOrs" Type="Int16" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="FootballLegendsDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Legends" EntityType="Self.Legend" />
+  </EntityContainer>
+</Schema>

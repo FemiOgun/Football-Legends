@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FootballLegendsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Legend">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Nationality" Type="varchar(max)" Nullable="false" />
+          <Property Name="CareerStartYear" Type="int" />
+          <Property Name="CareerEndYear" Type="int" />
+          <Property Name="Position" Type="varchar(max)" />
+          <Property Name="Clubs" Type="varchar(max)" />
+          <Property Name="Appearances" Type="int" />
+          <Property Name="Goals" Type="int" />
+          <Property Name="ClubHonors" Type="smallint" />
+          <Property Name="InternationalHonors" Type="smallint" />
+          <Property Name="BallondOrs" Type="smallint" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Image" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="FootballLegendsDBModelStoreContainer">
+          <EntitySet Name="Legend" EntityType="Self.Legend" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FootballLegendsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Legend">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CareerStartYear" Type="Int32" />
+          <Property Name="CareerEndYear" Type="Int32" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Clubs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Appearances" Type="Int32" />
+          <Property Name="Goals" Type="Int32" />
+          <Property Name="ClubHonors" Type="Int16" />
+          <Property Name="InternationalHonors" Type="Int16" />
+          <Property Name="BallondOrs" Type="Int16" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="FootballLegendsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Legends" EntityType="Self.Legend" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FootballLegendsDBModelStoreContainer" CdmEntityContainer="FootballLegendsDBEntities">
+          <EntitySetMapping Name="Legends">
+            <EntityTypeMapping TypeName="FootballLegendsDBModel.Legend">
+              <MappingFragment StoreEntitySet="Legend">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="CareerStartYear" ColumnName="CareerStartYear" />
+                <ScalarProperty Name="CareerEndYear" ColumnName="CareerEndYear" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Clubs" ColumnName="Clubs" />
+                <ScalarProperty Name="Appearances" ColumnName="Appearances" />
+                <ScalarProperty Name="Goals" ColumnName="Goals" />
+                <ScalarProperty Name="ClubHonors" ColumnName="ClubHonors" />
+                <ScalarProperty Name="InternationalHonors" ColumnName="InternationalHonors" />
+                <ScalarProperty Name="BallondOrs" ColumnName="BallondOrs" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

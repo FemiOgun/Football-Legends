@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FootballLegendsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Legend">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Nationality" Type="varchar(max)" Nullable="false" />
+    <Property Name="CareerStartYear" Type="int" />
+    <Property Name="CareerEndYear" Type="int" />
+    <Property Name="Position" Type="varchar(max)" />
+    <Property Name="Clubs" Type="varchar(max)" />
+    <Property Name="Appearances" Type="int" />
+    <Property Name="Goals" Type="int" />
+    <Property Name="ClubHonors" Type="smallint" />
+    <Property Name="InternationalHonors" Type="smallint" />
+    <Property Name="BallondOrs" Type="smallint" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Image" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="FootballLegendsDBModelStoreContainer">
+    <EntitySet Name="Legend" EntityType="Self.Legend" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,115 @@
+﻿@model PagedList.IPagedList<FootieLegends.Models.Legend>
+@using PagedList;
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Football Legends";
+}
+
+<h2 class="heading"> Football Legends</h2>
+
+<hr />
+
+@Html.ActionLink("Add New Legend", "Create", null, new { @class = "btn btn-link" })
+
+<br /><br />
+
+
+@using (Html.BeginForm())
+{
+    <div>
+        <P class="searchtext"> Find by name:</P> @Html.TextBox("SearchName", ViewBag.CurrentFilter as string, null, new { @class = "searchBox" })
+        <input type="submit" value="Search" class="btn btn-primary btn-sm" />
+    </div>
+}
+
+<hr />
+
+
+
+<div class="container profile">
+    <table class="table">
+        <tr class="table">
+            <th class="text-center" id="tablehead">
+                Image
+            </th>
+            <th class="text-center" id="tablehead">
+                @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })<span class="glyphicon glyphicon-sort"></span>
+            </th>
+            <th class="text-center " id="tablehead">
+                Nationality
+            </th>
+            <th class="text-center" id="tablehead">
+                Career Start Year
+            </th>
+            <th class="text-center" id="tablehead">
+                Career End Year
+            </th>
+            <th class="text-center" id="tablehead">
+                Position
+            </th>
+            <th class="text-center" id="tablehead">
+                Appearances
+            </th>
+            <th class="text-center" id="tablehead">
+                Goals
+            </th>
+            <th class="text-center" id="tablehead">
+                Ballon d'Ors
+            </th>
+            <th class="text-center" id="tablehead">
+                Actions
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    <a href="@Url.Action("Details", new { id = item.Id })">
+                        <img src="@Url.Content(item.Image)" height="100" width="85" style="border:double; border-color:antiquewhite;" />
+                    </a>
+                </td>
+                <td class="text-center" id="name">
+                    <strong>@Html.DisplayFor(modelItem => item.Name)</strong>
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Nationality)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.CareerStartYear)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.CareerEndYear)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Position)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Appearances)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Goals)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.BallondOrs)
+                </td>
+
+                <td class="text-center">
+                    <ul class="list-inline">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success btn-xs" })
+                        @Html.ActionLink("Profile", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                    </ul>
+                </td>
+            </tr>
+        }
+
+        </table>
+   </div>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

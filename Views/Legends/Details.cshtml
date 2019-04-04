@@ -1,0 +1,116 @@
+﻿@model FootieLegends.Models.Legend
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="heading">Profile</h2>
+
+<div class="container profile" >
+    <h4 class="headingfour">Legend</h4>
+    <hr />
+
+    <div class="col-md-2">
+        <img src="@Url.Content(Model.Image)" alt="Legend" height="210" style="border:groove" />
+        <br /><br />
+        <p class="name" id="name"><strong>@Html.DisplayFor(model => model.Name)</strong></p>
+    </div>
+    <div class="col-md-10">
+        <dl class="dl-horizontal">
+
+            <dt >
+                @Html.DisplayNameFor(model => model.Nationality)<br />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nationality)<br />
+            </dd>
+
+            <dt>
+                Career Start Year
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CareerStartYear)<br />
+            </dd>
+
+            <dt>
+                Career End Year
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CareerEndYear)<br />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Position)<br />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Position)<br />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Clubs)<br />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Clubs)<br />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Appearances)<br />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Appearances)<br />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Goals)<br />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Goals)<br />
+            </dd>
+
+            <dt>
+                Club Honors
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ClubHonors)<br />
+            </dd>
+
+            <dt>
+                International Honors
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.InternationalHonors)<br />
+            </dd>
+
+            <dt>
+                Ballon d'Ors
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BallondOrs)<br /><br />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)<br />
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)<br />
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<br /><br />
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
